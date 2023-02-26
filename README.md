@@ -143,7 +143,6 @@ averagePrice: 64.3021582733813
 ```
 
 ## Dependencies
-## TODO
 - `csv-parse` *CSV parser*
 - `js-yaml` *YAML parser*
 - `cli-color` *Command line colors*
@@ -152,6 +151,10 @@ averagePrice: 64.3021582733813
 
 > Offset data was parepared with using [data.world](https://data.world/)
 
+## TODO
+- Array, Map and I18n wrap implementation
+- Implementation for validation
+- Integrating data source
 
 ---
 ### Prepared by
