@@ -1,0 +1,36 @@
+- isNegate: false
+  score: 100
+  conditions:
+    - field: brand
+      equation: EQUALS
+      value: Adidas
+    - field: price
+      equation: GTE
+      value: 55
+- isNegate: false
+  score: 90
+  conditions:
+    - field: brand
+      equation: EQUALS
+      value: Adidas
+    - field: color
+      equation: NOT_EQUAL
+      value: White
+    - field: price
+      equation: LT
+      value: 60
+    - field: inStock
+      equation: EQUALS
+      value: true
+- isNegate: false
+  score: 90
+  conditions:
+    - field: brand
+      equation: EQUALS
+      value: Adidas
+    - field: stock
+      equation: GTE
+      value: 1500
+    - field: inStock
+      equation: EQUALS
+      value: true

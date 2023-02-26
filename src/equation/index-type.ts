@@ -1,0 +1,1 @@
+export type EquationMatcherLambda = (actual: unknown, conditionValue: unknown) => boolean;

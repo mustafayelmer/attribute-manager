@@ -1,0 +1,60 @@
+{
+  "name": "@mustafayelmer/attribute-manager",
+  "version": "1.0.1",
+  "description": "Attribute manager for products",
+  "keywords": [
+    "attribute",
+    "property"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafayelmer/attribute-manager.git"
+  },
+  "bugs": {
+    "email": "mustafayelmer@gmail.com",
+    "url": "https://github.com/mustafayelmer/attribute-manager/issues"
+  },
+  "homepage": "https://github.com/mustafayelmer/attribute-manager#readme",
+  "author": {
+    "name": "Mustafa Yelmer",
+    "email": "mustafayelmer@gmail.com"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "clear": "rimraf dist",
+    "lint": "eslint src/**/*.ts",
+    "build": "npm run clear && tsc && cp -rv src/assets dist/assets/",
+    "test": "jest --config=jest.json",
+    "test:watch": "jest --watch --config=jest.json",
+    "test:coverage": "jest --config=jest.json --coverage --coverageDirectory=coverage",
+    "start": "node -r ts-node/register src/application.ts"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "@types/js-yaml": "4.0.5",
+    "@types/node": "^18.0.0",
+    "@types/cli-color": "2.0.2",
+    "@types/csv-parse": "1.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "cli-color": "2.0.3",
+    "csv-parse": "5.3.5",
+    "js-yaml": "4.1.0"
+  }
+}

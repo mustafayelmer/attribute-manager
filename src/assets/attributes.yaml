@@ -1,0 +1,97 @@
+- name: code
+  wrap: PLAIN
+  type: STRING
+  validations:
+    required:
+      - true
+    unique:
+      - true
+- name: brand
+  wrap: PLAIN
+  type: STRING
+  validations:
+    required:
+      - true
+    minLength:
+      - 1
+    maxLength:
+      - 100
+- name: color
+  wrap: PLAIN
+  type: ENUM
+  keys:
+    - Black
+    - Blue
+    - Green
+    - Grey
+    - Ivory
+    - Khaki
+    - Navy
+    - Red
+    - White
+    - Yellow
+  validations:
+    required:
+      - true
+    default:
+      - WHITE
+- name: price
+  wrap: PLAIN
+  type: DOUBLE
+  validations:
+    required:
+      - true
+    min:
+      - 0
+    default:
+      - 0
+- name: currency
+  wrap: PLAIN
+  type: ENUM
+  keys:
+    - USD
+    - EUR
+    - GPB
+  validations:
+    required:
+      - true
+    default:
+      - USD
+- name: stock
+  wrap: PLAIN
+  type: INTEGER
+  validations:
+    required:
+      - true
+    min:
+      - 0
+    default:
+      - 0
+- name: inStock
+  wrap: PLAIN
+  type: BOOLEAN
+  validations:
+    required:
+      - true
+    default:
+      - false
+- name: sizes
+  wrap: ARRAY
+  type: ENUM
+  keys:
+    - XXS
+    - XS
+    - S
+    - M
+    - L
+    - XL
+    - XXL
+  validations:
+    required:
+      - true
+    minItems:
+      - 1
+    maxItems:
+      - 10
+    unique:
+      - true
