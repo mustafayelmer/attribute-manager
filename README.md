@@ -137,6 +137,11 @@ averagePrice: 64.3021582733813
 - `js-yaml` *YAML parser*
 - `cli-color` *Command line colors*
 
+## Resource
+
+> Offset data was parepared with using [data.world](https://data.world/)
+
+
 ---
 ### Prepared by
 - Mustafa Yelmer
