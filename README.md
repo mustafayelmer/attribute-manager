@@ -152,9 +152,10 @@ averagePrice: 64.3021582733813
 > Offset data was parepared with using [data.world](https://data.world/)
 
 ## TODO
-- Array, Map and I18n wrap implementation
-- Implementation for validation
-- Integrating data source
+- Array, Map and I18n `wrap` implementation
+- Implementation for `validation`
+- Integrating `data source`
+- Rule `parser` from plain text
 
 ---
 ### Prepared by
