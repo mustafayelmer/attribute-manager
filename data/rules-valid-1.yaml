@@ -1,0 +1,6 @@
+- isNegate: false
+  score: 100
+  conditions:
+    - field: brand
+      equation: EQUALS
+      value: Vans

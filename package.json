@@ -27,7 +27,7 @@
     "test": "jest --config=jest.json",
     "test:watch": "jest --watch --config=jest.json",
     "test:coverage": "jest --config=jest.json --coverage --coverageDirectory=coverage",
-    "start": "node -r ts-node/register src/application.ts"
+    "start": "node -r ts-node/register src/server.ts"
   },
   "files": [
     "dist/*"

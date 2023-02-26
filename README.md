@@ -21,6 +21,7 @@ totalPrice: 8938
 selectedProducts: 139
 averagePrice: 64.3021582733813
 ```
+![Response Sample](./data/screenshot-response.png)
 
 ## Standards
 - Language: `TS`
@@ -33,6 +34,8 @@ averagePrice: 64.3021582733813
 - LDD - Log Driven: `Yes` *Partially*
 - 12FA - 12 Factor-App: `50%` *Partially*
 
+## ERD Diagram
+- You can review [data-structure-diagram.pdf](./data/data-structure-diagram.pdf)
 ## Domains
 - `Attribute` *Attribute, fields and property responsibility*
   - Samples: price, weight, stock, ...
@@ -65,6 +68,8 @@ averagePrice: 64.3021582733813
 
 ## Offset Data
 ### Attribute Sample
+- File: [attributes.yaml](./src/assets/attributes.yaml)
+
 ```yaml
 - name: brand
   wrap: PLAIN
@@ -86,6 +91,8 @@ averagePrice: 64.3021582733813
 ```
 
 ### Category Sample
+- File: [categories.yaml](./src/assets/categories.yaml)
+
 ```yaml
 - name: shoe
   attributes:
@@ -101,6 +108,8 @@ averagePrice: 64.3021582733813
 
 
 ### Rule Sample
+- File: [rules.yaml](./src/assets/rules.yaml)
+
 ```yaml
 // adidas shoes that cost more than 55 usd
 - isNegate: false
@@ -115,6 +124,8 @@ averagePrice: 64.3021582733813
 ```
 
 ### Product Sample
+- File: [products.csv](./src/assets/products.csv)
+
 ```yaml
 - code: SKU06234
   brand: Diadora

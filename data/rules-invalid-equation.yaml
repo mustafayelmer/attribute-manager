@@ -1,0 +1,9 @@
+- isNegate: false
+  score: 100
+  conditions:
+    - field: brand
+      equation: OOPS
+      value: Adidas
+    - field: price
+      equation: GTE
+      value: 55

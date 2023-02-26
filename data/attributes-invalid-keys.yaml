@@ -1,0 +1,9 @@
+- name: code
+  wrap: ENUM
+  type: STRING
+  keys:
+  validations:
+    required:
+      - true
+    unique:
+      - true

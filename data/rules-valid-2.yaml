@@ -1,0 +1,12 @@
+- isNegate: false
+  score: 100
+  conditions:
+    - field: brand
+      equation: EQUALS
+      value: NewBalance
+- isNegate: false
+  score: 20
+  conditions:
+    - field: currency
+      equation: EQUALS
+      value: USD

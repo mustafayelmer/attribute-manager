@@ -172,7 +172,7 @@ export class ProductLoader {
             if (keys.length < 1) {
                 throw new ProductLoadException('empty-line', {index});
             }
-            if (!product.category) {
+            if (typeof product.category !== 'string' || product.category.trim() === '') {
                 throw new ProductLoadException('empty-category', {index});
             }
             const category = this.findCategory(product.category, index, context, categoryRec);
@@ -186,6 +186,7 @@ export class ProductLoader {
             });
         });
 
+        // clear cached/temporary data
         Object.keys(categoryRec).forEach(key => {
             delete categoryRec[key];
         });

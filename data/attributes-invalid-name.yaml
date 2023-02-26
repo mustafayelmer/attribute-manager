@@ -1,0 +1,8 @@
+- name:
+  wrap: PLAIN
+  type: STRING
+  validations:
+    required:
+      - true
+    unique:
+      - true

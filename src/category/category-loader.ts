@@ -4,6 +4,7 @@ import * as fs from "fs";
 import {CategoryLike} from "./category-like";
 import {CategoryLoadException} from "./category-load-exception";
 import {Context} from "../context";
+import {AttributeLoadException} from "../attribute/attribute-load-exception";
 
 export class CategoryLoader {
     static load(path: string, context: Context): void {
@@ -14,16 +15,21 @@ export class CategoryLoader {
         if (!Array.isArray(context.categories) || !context.categories.length) {
             throw new CategoryLoadException('invalid-array', {type: typeof context.categories, length: context.categories?.length});
         }
-        if (!context.categories.every(category => typeof category?.name === 'string')) {
-            throw new CategoryLoadException('invalid-name', {names: context.categories.map(c => c.name)});
-        }
-        if (!context.categories.every(category => {
-            if (!Array.isArray(category?.attributes) || category.attributes.length < 1) {
-                return false;
+        context.categories.forEach((category, index) => {
+            if (!category || Object.keys(category).length < 1) {
+                throw new CategoryLoadException('empty-line', {index});
             }
-            return category.attributes.every(attribute => typeof attribute === 'string');
-        })) {
-            throw new CategoryLoadException('invalid-name', {names: context.categories.map(c => c.name)});
-        }
+            if (typeof category?.name !== 'string' || category.name.trim() === '') {
+                throw new CategoryLoadException('invalid-name', {index, name: category.name});
+            }
+            if (!category.attributes || category.attributes.length < 1) {
+                throw new CategoryLoadException('empty-attribute', {index, attributes: category.attributes});
+            }
+            category.attributes.forEach((attribute, attributeIndex) => {
+                if (typeof attribute !== 'string') {
+                    throw new CategoryLoadException('empty-attribute', {index, attributeIndex, attribute: attribute});
+                }
+            });
+        });
     }
 }

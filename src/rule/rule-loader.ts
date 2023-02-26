@@ -29,6 +29,11 @@ export class RuleLoader {
             if (typeof rule.score !== 'number') {
                 throw new RuleLoadException('invalid-score', {index, typeOf: typeof rule.score});
             }
+
+            // normalize score if it's negative
+            if (rule.isNegate) {
+                rule.score *= -1;
+            }
             if (!Array.isArray(rule?.conditions) || rule.conditions.length < 1) {
                 throw new RuleLoadException('invalid-conditions', {index, typeOf: typeof rule.conditions, length: rule.conditions?.length});
             }
@@ -47,6 +52,7 @@ export class RuleLoader {
                 }
                 condition.equation = condition.equation.toUpperCase() as Equation;
                 if (!equations.includes(condition.equation)) {
+                    // check alternatives for equation
                     switch (condition.equation as string) {
                         case '==':
                             condition.equation = Equation.EQUALS;
@@ -76,6 +82,7 @@ export class RuleLoader {
             rule.debugInfo = (): string => {
                 return rule.conditions.map(c => `(${c.field} ${c.equation} ${c.value})`).join(' && ');
             }
+            // build runtime method with conditions
             rule.matches = (product: ProductLike): boolean => {
                 if (rule.conditions.length < 1) {
                     return true;

@@ -1,0 +1,11 @@
+code,brand,category,color,price,currency,stock,inStock,sizes
+SKU06234,Diadora,shoe,Green,34,USD,0,FALSE,"S,M,L,XL"
+SKU06898,Diadora,shoe,Green,70,USD,0,FALSE,"S,M,L"
+SKU01750,Adidas,shoe,Grey,66,USD,0,FALSE,"XS,L"
+SKU07065,NewBalance,shoe,Navy,81,USD,860,TRUE,"S,M,L"
+SKU07733,NewBalance,shoe,Red,64,USD,0,FALSE,"S,M,L"
+SKU07602,NewBalance,shoe,Blue,92,USD,596,TRUE,"M,L,XL"
+SKU02480,Vans,shoe,Grey,80,USD,1610,TRUE,"S,M,L,XXL"
+SKU01172,Adidas,shoe,Ivory,51,USD,0,FALSE,"M,L,XL"
+SKU09348,Onitsuka,shoe,Yellow,72,USD,1395,TRUE,"S,M,L,XL"
+SKU04167,Sketchers,shoe,Red,66,USD,0,FALSE,"XS,S,M"

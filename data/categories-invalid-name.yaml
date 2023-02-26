@@ -1,0 +1,10 @@
+- name:
+  attributes:
+    - code
+    - brand
+    - color
+    - price
+    - currency
+    - stock
+    - inStock
+    - sizes

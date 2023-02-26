@@ -1,0 +1,9 @@
+- isNegate: false
+  score: non-integer
+  conditions:
+    - field: brand
+      equation: EQUALS
+      value: Adidas
+    - field: price
+      equation: GTE
+      value: 55

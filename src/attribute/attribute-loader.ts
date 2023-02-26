@@ -5,6 +5,8 @@ import {AttributeLike} from "./attribute-like";
 import {AttributeLoadException} from "./attribute-load-exception";
 import {DataType} from "../data-type/data-type";
 import {Context} from "../context";
+import {WrapType} from "../wrap/wrap-type";
+import {ProductLoadException} from "../product/product-load-exception";
 
 export class AttributeLoader {
     static load(path: string, context: Context): void {
@@ -15,32 +17,39 @@ export class AttributeLoader {
         if (!Array.isArray(context.attributes) || !context.attributes.length) {
             throw new AttributeLoadException('invalid-array', {type: typeof context.attributes, length: context.attributes?.length});
         }
-        if (!context.attributes.every(attribute => typeof attribute?.name === 'string')) {
-            throw new AttributeLoadException('invalid-name', {names: context.attributes.map(c => c.name)});
-        }
         const types = Object.values(DataType);
-        if (!context.attributes.every(attribute => typeof attribute?.type === 'string' && types.includes(attribute.type))) {
-            throw new AttributeLoadException('invalid-type', {types: context.attributes.map(c => c.type)});
-        }
+        const wraps = Object.values(WrapType);
+
         context.attributes.forEach((attribute, index) => {
-            if (attribute.type !== DataType.ENUM) {
-                return true;
+            if (!attribute || Object.keys(attribute).length < 1) {
+                throw new AttributeLoadException('empty-line', {index});
             }
-            if (!Array.isArray(attribute.keys) || attribute.keys.length < 1) {
-                throw new AttributeLoadException('invalid-keys', {index, keys: attribute.keys});
+            if (typeof attribute?.name !== 'string' || attribute.name.trim() === '') {
+                throw new AttributeLoadException('invalid-name', {index, name: attribute.name});
             }
-            attribute.keys.forEach((key, i2) => {
-                switch (typeof key) {
-                    case "string":
-                        attribute.keys[i2] = attribute.keys[i2].toLowerCase();
-                        break;
-                    case "number":
-                        attribute.keys[i2] = (attribute.keys[i2] as unknown as number).toString(10);
-                        break;
-                    default:
-                        throw new AttributeLoadException('invalid-keys', {index, i2, keys: attribute.keys});
+            if (typeof attribute?.type !== 'string' || !types.includes(attribute.type)) {
+                throw new AttributeLoadException('invalid-type', {index, type: attribute.type});
+            }
+            if (typeof attribute?.wrap !== 'string' || !wraps.includes(attribute.wrap)) {
+                throw new AttributeLoadException('invalid-wrap', {index, wrap: attribute.wrap});
+            }
+            if (attribute.type === DataType.ENUM) {
+                if (!Array.isArray(attribute.keys) || attribute.keys.length < 1) {
+                    throw new AttributeLoadException('invalid-keys', {index, keys: attribute.keys});
                 }
-            });
+                attribute.keys.forEach((key, i2) => {
+                    switch (typeof key) {
+                        case "string":
+                            attribute.keys[i2] = attribute.keys[i2].toLowerCase();
+                            break;
+                        case "number":
+                            attribute.keys[i2] = (attribute.keys[i2] as unknown as number).toString(10);
+                            break;
+                        default:
+                            throw new AttributeLoadException('invalid-keys', {index, i2, keys: attribute.keys});
+                    }
+                });
+            }
         })
     }
 }
