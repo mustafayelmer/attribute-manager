@@ -7,6 +7,7 @@ It manages attributes for entities as PoC
 ## Utility Commands
 - `npm i` *// Install dependencies* 
 - `npm run clear` *// Clears dist folder*
+- `npm run build` *// Builds js files in dist folder*
 - `npm run lint` *// Executes Eslint, static code analysis*
 - `npm run test` *// Runs test cases*
 - `npm run coverage` *// Executes test coverage calculation*
@@ -21,6 +22,8 @@ totalPrice: 8938
 selectedProducts: 139
 averagePrice: 64.3021582733813
 ```
+> Response will be below, when executing `npm run start`
+> 
 ![Response Sample](./data/screenshot-response.png)
 
 ## Standards
