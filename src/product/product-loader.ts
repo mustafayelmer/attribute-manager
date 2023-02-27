@@ -1,12 +1,13 @@
 import fs from "fs";
 import {parse} from 'csv-parse/sync';
+
 import {ProductLike} from "./product-like";
-import {ProductLoadException} from "./product-load-exception";
 import {CategoryLike} from "../category/category-like";
 import {AttributeLike} from "../attribute/attribute-like";
+import {Context} from "../context";
+import {ProductLoadException} from "./product-load-exception";
 import {DataType} from "../data-type/data-type";
 import {WrapType} from "../wrap/wrap-type";
-import {Context} from "../context";
 
 /**
  * Handles loading of rules

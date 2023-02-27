@@ -2,9 +2,9 @@ import fs from "fs";
 import * as yaml from "js-yaml";
 
 import {AttributeLike} from "./attribute-like";
+import {Context} from "../context";
 import {AttributeLoadException} from "./attribute-load-exception";
 import {DataType} from "../data-type/data-type";
-import {Context} from "../context";
 import {WrapType} from "../wrap/wrap-type";
 
 /**

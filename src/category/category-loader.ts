@@ -2,8 +2,8 @@ import * as yaml from "js-yaml";
 import * as fs from "fs";
 
 import {CategoryLike} from "./category-like";
-import {CategoryLoadException} from "./category-load-exception";
 import {Context} from "../context";
+import {CategoryLoadException} from "./category-load-exception";
 
 export class CategoryLoader {
 

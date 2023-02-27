@@ -2,11 +2,11 @@ import fs from "fs";
 import * as yaml from "js-yaml";
 
 import {RuleLike} from "./rule-like";
+import {Context} from "../context";
+import {ProductLike} from "../product/product-like";
 import {RuleLoadException} from "./rule-load-exception";
 import {Equation} from "../equation/equation";
-import {Context} from "../context";
 import {equationService} from "../equation/equation-service-impl";
-import {ProductLike} from "../product/product-like";
 
 /**
  * Handles loading of rules
