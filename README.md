@@ -27,12 +27,14 @@ averagePrice: 64.3021582733813
 - Language: `TS`
 - Eslint: `Yes`
 - Static Code Analysis: `Yes` *IntelliJ Code Inspections*
-- DDD - Document Driven: `Yes`
-- DDD - Domain Driven: `Yes`
-- EDD - Exception Driven: `Yes`
-- TDD - Test Driven: `Yes`
-- LDD - Log Driven: `Yes` *Partially*
-- 12FA - 12 Factor-App: `50%` *Partially*
+- 12FA - 12 Factor-App: *Partially*
+- **D**DD - Document Driven: `Yes`
+- **D**DD - Domain Driven: `Yes`
+- **D**DD - Data Driven: ~~NO~~
+- **E**DD - Exception Driven: `Yes`
+- **E**DD - Event Driven: ~~NO~~
+- **L**DD - Log Driven: *Partially*
+- **T**DD - Test Driven: `Yes`
 
 ## ERD Diagram
 - You can review [data-structure-diagram.pdf](./data/data-structure-diagram.pdf)
