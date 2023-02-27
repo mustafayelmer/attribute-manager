@@ -4,7 +4,6 @@ import * as fs from "fs";
 import {CategoryLike} from "./category-like";
 import {CategoryLoadException} from "./category-load-exception";
 import {Context} from "../context";
-import {AttributeLoadException} from "../attribute/attribute-load-exception";
 
 export class CategoryLoader {
 

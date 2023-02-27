@@ -8,7 +8,7 @@ import {ProductLoader} from "./product/product-loader";
 import {ProductProcessor} from "./product/product-processor";
 
 /**
- * Applicatiion
+ * Main application
  * */
 export class Application {
     private static context: Context;

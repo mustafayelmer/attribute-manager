@@ -2,6 +2,10 @@ import {Context} from "../context";
 import {ProductProcessorResponse} from "./index-type";
 import {ProductScoreLike} from "./product-score-like";
 
+// noinspection JSUnusedLocalSymbols
+/**
+ * Handles calculation for selecting products
+ * */
 export class ProductProcessor {
     /**
      * Cut-Of (Threshold) for scores

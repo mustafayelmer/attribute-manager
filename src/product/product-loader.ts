@@ -1,5 +1,5 @@
 import fs from "fs";
-import { parse } from 'csv-parse/sync';
+import {parse} from 'csv-parse/sync';
 import {ProductLike} from "./product-like";
 import {ProductLoadException} from "./product-load-exception";
 import {CategoryLike} from "../category/category-like";
