@@ -8,7 +8,14 @@ import {Context} from "../context";
 import {equationService} from "../equation/equation-service-impl";
 import {ProductLike} from "../product/product-like";
 
+/**
+ * Handles loading of rules
+ * */
 export class RuleLoader {
+
+    /**
+     * Loads a file and casts/validates values
+     * */
     static load(path: string, context: Context): void {
         if (!fs.existsSync(path)) {
             throw new RuleLoadException('file-not-found', {path});

@@ -2,6 +2,12 @@ import {WrapType} from "../wrap/wrap-type";
 import {DataType} from "../data-type/data-type";
 import {ValidationType} from "../validation/validation-type";
 
+/**
+ * Attribute interface
+ *
+ * @todo there may be a necessity to create a class with implementing this interface
+ * Note: So use effective memory, dont use solid class
+ * */
 export interface AttributeLike {
     /**
      * Name of attribute

@@ -7,9 +7,15 @@ import {RuleLoader} from "./rule/rule-loader";
 import {ProductLoader} from "./product/product-loader";
 import {ProductProcessor} from "./product/product-processor";
 
+/**
+ * Applicatiion
+ * */
 export class Application {
     private static context: Context;
 
+    /**
+     * Load files
+     * */
     private static load(): void {
         AttributeLoader.load(__dirname + '/assets/attributes.yaml', this.context);
         console.log(`${clc.yellow('Loader is starting')} ...`);
@@ -26,6 +32,10 @@ export class Application {
         console.log(`${clc.yellow('Loader is finished')} .`);
         console.log('');
     }
+
+    /**
+     * Process calculations
+     * */
     private static process(): void {
         console.log(`${clc.blue('Processor is starting')} ...`);
         const result = ProductProcessor.run(this.context);
@@ -35,9 +45,17 @@ export class Application {
         console.log(`${clc.blue('Processor is finished')} .`);
         console.log('');
     }
+
+    /**
+     * Getter for context
+     * */
     static getContext(): Context {
         return this.context;
     }
+
+    /**
+     * Clear context
+     * */
     static clear(): void {
         this.context = {
             attributes: [],
@@ -46,6 +64,12 @@ export class Application {
             products: [],
         };
     }
+
+    /**
+     * Mashup method for loading & processing
+     *
+     * - If it's not test, it kills itself
+     * */
     static start(): void {
         this.clear();
         this.load();

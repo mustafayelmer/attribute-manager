@@ -6,9 +6,15 @@ import {AttributeLoadException} from "./attribute-load-exception";
 import {DataType} from "../data-type/data-type";
 import {Context} from "../context";
 import {WrapType} from "../wrap/wrap-type";
-import {ProductLoadException} from "../product/product-load-exception";
 
+/**
+ * Handles loading of attributes
+ * */
 export class AttributeLoader {
+
+    /**
+     * Loads a file and casts/validates values
+     * */
     static load(path: string, context: Context): void {
         if (!fs.existsSync(path)) {
             throw new AttributeLoadException('file-not-found', {path});

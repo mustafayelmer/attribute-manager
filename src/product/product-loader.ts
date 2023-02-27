@@ -8,8 +8,17 @@ import {DataType} from "../data-type/data-type";
 import {WrapType} from "../wrap/wrap-type";
 import {Context} from "../context";
 
+/**
+ * Handles loading of rules
+ * */
 export class ProductLoader {
 
+    /**
+     * Finds category with given category name (value)
+     *
+     * - Index is used for error logs
+     * - cache is used to speed up
+     */
     private static findCategory(value: string, index: number, context: Context, cache: Record<string, CategoryLike>): CategoryLike {
         let found = cache[value];
         if (found === undefined) {
@@ -21,6 +30,10 @@ export class ProductLoader {
         }
         return found;
     }
+
+    /**
+     * Finds an attribute and cast property value of product according to this attribute
+     * */
     private static castAttribute(product: ProductLike, key: string, index: number, context: Context, cache: Record<string, AttributeLike>): void {
         let found = cache[key];
         if (found === undefined) {
@@ -153,6 +166,9 @@ export class ProductLoader {
         }
     }
 
+    /**
+     * Loads a file and casts/validates values
+     * */
     static load(path: string, context: Context): void {
         if (!fs.existsSync(path)) {
             throw new ProductLoadException('file-not-found', {path});

@@ -7,6 +7,10 @@ import {Context} from "../context";
 import {AttributeLoadException} from "../attribute/attribute-load-exception";
 
 export class CategoryLoader {
+
+    /**
+     * Loads a file and casts/validates values
+     * */
     static load(path: string, context: Context): void {
         if (!fs.existsSync(path)) {
             throw new CategoryLoadException('file-not-found', {path});

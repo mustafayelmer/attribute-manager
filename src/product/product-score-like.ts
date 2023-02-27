@@ -1,5 +1,10 @@
 import {ProductLike} from "./product-like";
 
+/**
+ * Product with score DTO
+ *
+ * - It will be used when printing of selected products are needed
+ * */
 export interface ProductScoreLike extends ProductLike {
     /**
      * Score of product

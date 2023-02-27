@@ -1,6 +1,12 @@
 import {Equation} from "../equation/equation";
 import {EquationMatcherLambda} from "../equation/index-type";
 
+/**
+ * Condition attribute interface
+ *
+ * @todo there may be a necessity to create a class with implementing this interface
+ * Note: So use effective memory, dont use solid class
+ * */
 export interface ConditionLike {
     /**
      * Field in the condition
