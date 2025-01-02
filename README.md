@@ -3,7 +3,7 @@ It manages attributes for entities as PoC
 
 ## Pre-Requisite
 - `Latest version of Node` [Download](https://nodejs.org/en/download/)
-
+a
 ## Utility Commands
 - `npm i` *// Install dependencies* 
 - `npm run clear` *// Clears dist folder*
