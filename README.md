@@ -17,7 +17,6 @@ a
 
 ## Response Model
 ```yaml
---
 totalPrice: 8938
 selectedProducts: 139
 averagePrice: 64.3021582733813
@@ -116,7 +115,7 @@ averagePrice: 64.3021582733813
 - File: [rules.yaml](./src/assets/rules.yaml)
 
 ```yaml
-// adidas shoes that cost more than 55 usd
+# adidas shoes that cost more than 55 usd
 - isNegate: false
   score: 100
   conditions:
@@ -125,7 +124,7 @@ averagePrice: 64.3021582733813
       value: Adidas
     - field: price
       equation: GT
-      value: 55
+      value: '55'
 ```
 
 ### Product Sample
